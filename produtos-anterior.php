@@ -33,12 +33,12 @@ $quantidade = $_POST['quantidade'];
                     <span><b>Produto</b></span>
                     <span><b>Quantidade</b></span>
                     <?php for ($x = 0; $x < $quantidade; $x++) : ?>
-                        <select name="produtos[<?= $x ?>][id]" id="produtos">
+                        <select name="produtos[]" id="produtos">
                             <?php foreach ($produtos as $chave => $produto) : ?>
                                 <option value="<?= $chave ?>"><?= $produto['nome'] ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <input type="number" name="produtos[<?= $x ?>][quantidade]" id="produtos_quantidade" value="1">
+                        <input type="number" name="produtos_quantidade[]" id="produtos_quantidade" value="1">
                     <?php endfor; ?>
 
                     <button type="submit">Finalizar compra</button>
